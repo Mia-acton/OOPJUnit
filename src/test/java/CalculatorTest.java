@@ -38,4 +38,14 @@ public class CalculatorTest {
         assertEquals("Negative results not allowed", ex.getMessage());
     }
 
+    @Test
+    void testDivideSuccess() {
+        assertEquals(5, myCalc.divide(10, 2));
+    }
+
+    @Test
+    void testDivideByZero() {
+        Exception ex = assertThrows(ArithmeticException.class, () -> myCalc.divide(10, 0));
+        assertEquals("Cannot divide by zero", ex.getMessage());
+    }
 }
