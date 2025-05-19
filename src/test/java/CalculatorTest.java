@@ -48,4 +48,16 @@ public class CalculatorTest {
         Exception ex = assertThrows(ArithmeticException.class, () -> myCalc.divide(10, 0));
         assertEquals("Cannot divide by zero", ex.getMessage());
     }
+
+    @Test
+    void testMultiplySuccess() {
+        assertEquals(20, myCalc.multiply(4, 5));
+    }
+
+    @Test
+    void testMultiplyOverflow() {
+        Exception ex = assertThrows(UnsupportedOperationException.class, () -> myCalc.multiply(Integer.MAX_VALUE, 2));
+        assertEquals("Multiplication overflow", ex.getMessage());
+    }
+
 }
