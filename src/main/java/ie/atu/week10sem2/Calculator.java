@@ -9,4 +9,13 @@ public class Calculator {
         }
         return (int) result;
     }
+
+    public int subtract(int firstNum, int secondNum) {
+        int result = firstNum - secondNum;
+        if (result < 0) {
+            throw new IllegalStateException("Negative results not allowed");
+        }
+        return result;
+    }
+
 }
