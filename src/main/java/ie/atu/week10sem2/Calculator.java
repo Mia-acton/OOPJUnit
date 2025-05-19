@@ -24,4 +24,13 @@ public class Calculator {
         }
         return a / b;
     }
+
+    public int multiply(int a, int b) {
+        long result = (long) a * b;
+        if (result > Integer.MAX_VALUE) {
+            throw new UnsupportedOperationException("Multiplication overflow");
+        }
+        return (int) result;
+    }
+
 }
